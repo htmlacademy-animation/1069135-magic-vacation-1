@@ -183,4 +183,9 @@
 
 .chat__footer {
   margin-top: auto;
+
+  animation-delay: 1s;
+  animation-name: text-right-to-left;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-in;
 }
