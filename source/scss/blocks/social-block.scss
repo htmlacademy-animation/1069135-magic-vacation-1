@@ -5,6 +5,11 @@
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+
+      li {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }
@@ -17,6 +22,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition-duration: 0.7s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -89,6 +95,8 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition-property: opacity;
+  transition-duration: 0.45s;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -145,6 +153,11 @@
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition-property: opacity, transform;
+    transition-duration: 0.6s, 0.45s;
+    transition-timing-function: ease, ease;
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -157,6 +170,12 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       margin: 0 1.25rem;
     }
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        transition-delay: 150ms * $i , 50ms * $i;
+      }
+    }
   }
 }
 
@@ -168,6 +187,9 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition-property: color;
+  transition-duration: 0.35s;
+  transition-timing-function: ease-in-out;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
