@@ -22,6 +22,6 @@ social();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
-window.addEventListener('load', () => {
-  document.body.classList.add('load');
+window.addEventListener(`load`, () => {
+  document.body.classList.add(`load`);
 });
