@@ -5,6 +5,10 @@
   right: 0;
   padding: 2.7rem 0;
   z-index: 10;
+  transform: translateY(-100%);
+  transition-property: transform;
+  transition-duration: 1.2s;
+  transition-timing-function: cubic-bezier(0, 0.83, 0, 0.99);
 
   @media (min-width: $stop-scaling) {
     padding: 27px 0;
@@ -17,6 +21,10 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     padding: 0.9rem 0;
   }
+}
+
+.load .page-header {
+  transform: translateY(0);
 }
 
 .page-header__wrapper {
@@ -35,6 +43,12 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition-property: transform, opacity;
+  transition-duration: 1.2s, 1.2s;
+  transition-delay: 1.2s, 1.2s;
+  transition-timing-function: cubic-bezier(0, 0.83, 0, 0.99), linear;
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -69,6 +83,11 @@
     width: 100%;
     height: auto;
   }
+}
+
+.load .page-header__logo {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .page-header__toggler {
