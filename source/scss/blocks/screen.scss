@@ -310,7 +310,11 @@
 }
 
 .screen--prizes {
-  background-color: $c-dark;
+  &.active {
+    & ~ .bg-block {
+      height : 100%;
+    }
+  }
 }
 
 .screen--game {
